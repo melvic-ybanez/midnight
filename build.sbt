@@ -1,4 +1,4 @@
-ThisBuild / organization := "com.github.melvic_ybanez"
+ThisBuild / organization := "com.github.melvic"
 
 ThisBuild / version := "1.0-SNAPSHOT"
 
