@@ -8,7 +8,8 @@ lazy val spiders = (project in file("spiders"))
   .settings(
     name := "Midnight Spiders",
     libraryDependencies ++= Seq(
-      "org.jsoup" % "jsoup" % "1.12.1"
+      "org.jsoup" % "jsoup" % "1.12.1",
+      "com.lihaoyi" %% "fastparse" % "2.1.3"
     )
   )
 
