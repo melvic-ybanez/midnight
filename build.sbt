@@ -12,7 +12,9 @@ lazy val spiders = (project in file("spiders"))
       "com.lihaoyi" %% "fastparse" % "2.1.3",
 
       "org.scalactic" %% "scalactic" % "3.0.8",
-      "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+      "org.scalatest" %% "scalatest" % "3.0.8" % "test",
+
+      "org.typelevel" %% "cats-core" % "1.0.0"
     )
   )
 
@@ -21,4 +23,11 @@ lazy val view = (project in file("view"))
     name := "Midnight View"
   )
 
+scalacOptions ++= Seq(
+  "-Xfatal-warnings",
+  "-Ypartial-unification"
+)
+
 logBuffered in Test := false
+
+
