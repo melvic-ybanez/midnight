@@ -9,7 +9,10 @@ lazy val spiders = (project in file("spiders"))
     name := "Midnight Spiders",
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.12.1",
-      "com.lihaoyi" %% "fastparse" % "2.1.3"
+      "com.lihaoyi" %% "fastparse" % "2.1.3",
+
+      "org.scalactic" %% "scalactic" % "3.0.8",
+      "org.scalatest" %% "scalatest" % "3.0.8" % "test"
     )
   )
 
@@ -17,3 +20,5 @@ lazy val view = (project in file("view"))
   .settings(
     name := "Midnight View"
   )
+
+logBuffered in Test := false
