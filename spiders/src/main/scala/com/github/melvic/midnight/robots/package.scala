@@ -20,14 +20,14 @@ package object robots {
   }
 
   implicit val disallowMonoid: Monoid[Disallow] = new Monoid[Disallow] {
-    override def empty = BlockList(Vector.empty)
+    override def empty = BlackList(Vector.empty)
 
     override def combine(x: Disallow, y: Disallow) = (x, y) match {
       case (DisallowNone, _) => DisallowNone
-      case (DisallowAll, _) => DisallowAll
       case (_, DisallowNone) => DisallowNone
+      case (DisallowAll, _) => DisallowAll
       case (_, DisallowAll) => DisallowAll
-      case (BlockList(paths), BlockList(paths_)) => BlockList(paths ++ paths_)
+      case (BlackList(paths), BlackList(paths_)) => BlackList(paths ++ paths_)
     }
   }
 }
